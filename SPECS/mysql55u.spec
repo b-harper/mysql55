@@ -1,9 +1,9 @@
 
 %global basever 5.5
 
-Name: mysql55
+Name: mysql55u
 Version: 5.5.34
-Release: 2.ius%{?dist}
+Release: 3.ius%{?dist}
 Summary: MySQL client programs and shared libraries
 Group: Applications/Databases
 URL: http://www.mysql.com
@@ -78,6 +78,36 @@ Obsoletes: mysql-cluster < 5.1.44
 Conflicts: mysql < %{basever}
 Provides: mysql = %{version}-%{release}
 
+# Obsoletes all IUS mysql55 versions so only they get updated and not Red Hat's mysql55
+Obsoletes: mysql55 = 5.5.13-1.ius%{?dist}
+Obsoletes: mysql55 = 5.5.14-2.ius%{?dist}
+Obsoletes: mysql55 = 5.5.15-2.ius%{?dist}
+Obsoletes: mysql55 = 5.5.15-3.ius%{?dist}
+Obsoletes: mysql55 = 5.5.16-1.ius%{?dist}
+Obsoletes: mysql55 = 5.5.17-1.ius%{?dist}
+Obsoletes: mysql55 = 5.5.18-1.ius%{?dist}
+Obsoletes: mysql55 = 5.5.19-1.ius%{?dist}
+Obsoletes: mysql55 = 5.5.20-1.ius%{?dist}
+Obsoletes: mysql55 = 5.5.21-1.ius%{?dist}
+Obsoletes: mysql55 = 5.5.22-1.ius%{?dist}
+Obsoletes: mysql55 = 5.5.23-1.ius%{?dist}
+Obsoletes: mysql55 = 5.5.24-1.ius%{?dist}
+Obsoletes: mysql55 = 5.5.25-1.ius%{?dist}
+Obsoletes: mysql55 = 5.5.25-2.a.ius%{?dist}
+Obsoletes: mysql55 = 5.5.25-3.a.ius%{?dist}
+Obsoletes: mysql55 = 5.5.27-2.ius%{?dist}
+Obsoletes: mysql55 = 5.5.28-1.ius%{?dist}
+Obsoletes: mysql55 = 5.5.28-2.ius%{?dist}
+Obsoletes: mysql55 = 5.5.29-1.ius%{?dist}
+Obsoletes: mysql55 = 5.5.30-1.ius%{?dist}
+Obsoletes: mysql55 = 5.5.31-1.ius%{?dist}
+Obsoletes: mysql55 = 5.5.33-1.ius%{?dist}
+Obsoletes: mysql55 = 5.5.33-2.ius%{?dist}
+Obsoletes: mysql55 = 5.5.34-1.ius%{?dist}
+Obsoletes: mysql55 = 5.5.34-2.ius%{?dist}
+
+
+
 # Added as a convenience, mysql51 doesn't require mysqlclient15
 # but all the packages built against mysql 5.0/5.1 do
 %if 0%{?el5}
@@ -112,8 +142,37 @@ Conflicts: mysql55-mysql-libs
 Provides: mysql-libs = %{version}-%{release}
 Provides: config(mysql-libs) = %{version}-%{release}
 
+# Obsoletes all IUS mysql55 versions so only they get updated and not Red Hat's mysql55
+Obsoletes: mysql55-libs = 5.5.13-1.ius%{?dist}
+Obsoletes: mysql55-libs = 5.5.14-2.ius%{?dist}
+Obsoletes: mysql55-libs = 5.5.15-2.ius%{?dist}
+Obsoletes: mysql55-libs = 5.5.15-3.ius%{?dist}
+Obsoletes: mysql55-libs = 5.5.16-1.ius%{?dist}
+Obsoletes: mysql55-libs = 5.5.17-1.ius%{?dist}
+Obsoletes: mysql55-libs = 5.5.18-1.ius%{?dist}
+Obsoletes: mysql55-libs = 5.5.19-1.ius%{?dist}
+Obsoletes: mysql55-libs = 5.5.20-1.ius%{?dist}
+Obsoletes: mysql55-libs = 5.5.21-1.ius%{?dist}
+Obsoletes: mysql55-libs = 5.5.22-1.ius%{?dist}
+Obsoletes: mysql55-libs = 5.5.23-1.ius%{?dist}
+Obsoletes: mysql55-libs = 5.5.24-1.ius%{?dist}
+Obsoletes: mysql55-libs = 5.5.25-1.ius%{?dist}
+Obsoletes: mysql55-libs = 5.5.25-2.a.ius%{?dist}
+Obsoletes: mysql55-libs = 5.5.25-3.a.ius%{?dist}
+Obsoletes: mysql55-libs = 5.5.27-2.ius%{?dist}
+Obsoletes: mysql55-libs = 5.5.28-1.ius%{?dist}
+Obsoletes: mysql55-libs = 5.5.28-2.ius%{?dist}
+Obsoletes: mysql55-libs = 5.5.29-1.ius%{?dist}
+Obsoletes: mysql55-libs = 5.5.30-1.ius%{?dist}
+Obsoletes: mysql55-libs = 5.5.31-1.ius%{?dist}
+Obsoletes: mysql55-libs = 5.5.33-1.ius%{?dist}
+Obsoletes: mysql55-libs = 5.5.33-2.ius%{?dist}
+Obsoletes: mysql55-libs = 5.5.34-1.ius%{?dist}
+Obsoletes: mysql55-libs = 5.5.34-2.ius%{?dist}
+
+
 %description libs
-The mysql-libs package provides the essential shared libraries for any 
+The mysql-libs package provides the essential shared libraries for any
 MySQL client program or interface. You will need to install this package
 to use any other MySQL package or any clients that need to connect to a
 MySQL server.
@@ -143,6 +202,34 @@ Conflicts: mysql55-mysql-server
 Provides: mysql-server = %{version}-%{release}
 Provides: config(mysql-server) = %{version}-%{release}
 
+# Obsoletes all IUS mysql55 versions so only they get updated and not Red Hat's mysql55
+Obsoletes: mysql55-server = 5.5.13-1.ius%{?dist}
+Obsoletes: mysql55-server = 5.5.14-2.ius%{?dist}
+Obsoletes: mysql55-server = 5.5.15-2.ius%{?dist}
+Obsoletes: mysql55-server = 5.5.15-3.ius%{?dist}
+Obsoletes: mysql55-server = 5.5.16-1.ius%{?dist}
+Obsoletes: mysql55-server = 5.5.17-1.ius%{?dist}
+Obsoletes: mysql55-server = 5.5.18-1.ius%{?dist}
+Obsoletes: mysql55-server = 5.5.19-1.ius%{?dist}
+Obsoletes: mysql55-server = 5.5.20-1.ius%{?dist}
+Obsoletes: mysql55-server = 5.5.21-1.ius%{?dist}
+Obsoletes: mysql55-server = 5.5.22-1.ius%{?dist}
+Obsoletes: mysql55-server = 5.5.23-1.ius%{?dist}
+Obsoletes: mysql55-server = 5.5.24-1.ius%{?dist}
+Obsoletes: mysql55-server = 5.5.25-1.ius%{?dist}
+Obsoletes: mysql55-server = 5.5.25-2.a.ius%{?dist}
+Obsoletes: mysql55-server = 5.5.25-3.a.ius%{?dist}
+Obsoletes: mysql55-server = 5.5.27-2.ius%{?dist}
+Obsoletes: mysql55-server = 5.5.28-1.ius%{?dist}
+Obsoletes: mysql55-server = 5.5.28-2.ius%{?dist}
+Obsoletes: mysql55-server = 5.5.29-1.ius%{?dist}
+Obsoletes: mysql55-server = 5.5.30-1.ius%{?dist}
+Obsoletes: mysql55-server = 5.5.31-1.ius%{?dist}
+Obsoletes: mysql55-server = 5.5.33-1.ius%{?dist}
+Obsoletes: mysql55-server = 5.5.33-2.ius%{?dist}
+Obsoletes: mysql55-server = 5.5.34-1.ius%{?dist}
+Obsoletes: mysql55-server = 5.5.34-2.ius%{?dist}
+
 %description server
 MySQL is a multi-user, multi-threaded SQL database server. MySQL is a
 client/server implementation consisting of a server daemon (mysqld)
@@ -165,6 +252,35 @@ Conflicts: mysql55-mysql-devel
 %endif
 Provides: mysql-devel = %{version}-%{release}
 
+# Obsoletes all IUS mysql55 versions so only they get updated and not Red Hat's mysql55
+Obsoletes: mysql55-devel = 5.5.13-1.ius%{?dist}
+Obsoletes: mysql55-devel = 5.5.14-2.ius%{?dist}
+Obsoletes: mysql55-devel = 5.5.15-2.ius%{?dist}
+Obsoletes: mysql55-devel = 5.5.15-3.ius%{?dist}
+Obsoletes: mysql55-devel = 5.5.16-1.ius%{?dist}
+Obsoletes: mysql55-devel = 5.5.17-1.ius%{?dist}
+Obsoletes: mysql55-devel = 5.5.18-1.ius%{?dist}
+Obsoletes: mysql55-devel = 5.5.19-1.ius%{?dist}
+Obsoletes: mysql55-devel = 5.5.20-1.ius%{?dist}
+Obsoletes: mysql55-devel = 5.5.21-1.ius%{?dist}
+Obsoletes: mysql55-devel = 5.5.22-1.ius%{?dist}
+Obsoletes: mysql55-devel = 5.5.23-1.ius%{?dist}
+Obsoletes: mysql55-devel = 5.5.24-1.ius%{?dist}
+Obsoletes: mysql55-devel = 5.5.25-1.ius%{?dist}
+Obsoletes: mysql55-devel = 5.5.25-2.a.ius%{?dist}
+Obsoletes: mysql55-devel = 5.5.25-3.a.ius%{?dist}
+Obsoletes: mysql55-devel = 5.5.27-2.ius%{?dist}
+Obsoletes: mysql55-devel = 5.5.28-1.ius%{?dist}
+Obsoletes: mysql55-devel = 5.5.28-2.ius%{?dist}
+Obsoletes: mysql55-devel = 5.5.29-1.ius%{?dist}
+Obsoletes: mysql55-devel = 5.5.30-1.ius%{?dist}
+Obsoletes: mysql55-devel = 5.5.31-1.ius%{?dist}
+Obsoletes: mysql55-devel = 5.5.33-1.ius%{?dist}
+Obsoletes: mysql55-devel = 5.5.33-2.ius%{?dist}
+Obsoletes: mysql55-devel = 5.5.34-1.ius%{?dist}
+Obsoletes: mysql55-devel = 5.5.34-2.ius%{?dist}
+
+
 %description devel
 MySQL is a multi-user, multi-threaded SQL database server. This
 package contains the libraries and header files that are needed for
@@ -181,6 +297,35 @@ Conflicts: mysql-embedded < %{basever}
 Conflicts: mysql55-mysql-embedded
 %endif
 Provides: mysql-embedded = %{version}-%{release}
+
+# Obsoletes all IUS mysql55 versions so only they get updated and not Red Hat's mysql55
+Obsoletes: mysql55-embedded = 5.5.13-1.ius%{?dist}
+Obsoletes: mysql55-embedded = 5.5.14-2.ius%{?dist}
+Obsoletes: mysql55-embedded = 5.5.15-2.ius%{?dist}
+Obsoletes: mysql55-embedded = 5.5.15-3.ius%{?dist}
+Obsoletes: mysql55-embedded = 5.5.16-1.ius%{?dist}
+Obsoletes: mysql55-embedded = 5.5.17-1.ius%{?dist}
+Obsoletes: mysql55-embedded = 5.5.18-1.ius%{?dist}
+Obsoletes: mysql55-embedded = 5.5.19-1.ius%{?dist}
+Obsoletes: mysql55-embedded = 5.5.20-1.ius%{?dist}
+Obsoletes: mysql55-embedded = 5.5.21-1.ius%{?dist}
+Obsoletes: mysql55-embedded = 5.5.22-1.ius%{?dist}
+Obsoletes: mysql55-embedded = 5.5.23-1.ius%{?dist}
+Obsoletes: mysql55-embedded = 5.5.24-1.ius%{?dist}
+Obsoletes: mysql55-embedded = 5.5.25-1.ius%{?dist}
+Obsoletes: mysql55-embedded = 5.5.25-2.a.ius%{?dist}
+Obsoletes: mysql55-embedded = 5.5.25-3.a.ius%{?dist}
+Obsoletes: mysql55-embedded = 5.5.27-2.ius%{?dist}
+Obsoletes: mysql55-embedded = 5.5.28-1.ius%{?dist}
+Obsoletes: mysql55-embedded = 5.5.28-2.ius%{?dist}
+Obsoletes: mysql55-embedded = 5.5.29-1.ius%{?dist}
+Obsoletes: mysql55-embedded = 5.5.30-1.ius%{?dist}
+Obsoletes: mysql55-embedded = 5.5.31-1.ius%{?dist}
+Obsoletes: mysql55-embedded = 5.5.33-1.ius%{?dist}
+Obsoletes: mysql55-embedded = 5.5.33-2.ius%{?dist}
+Obsoletes: mysql55-embedded = 5.5.34-1.ius%{?dist}
+Obsoletes: mysql55-embedded = 5.5.34-2.ius%{?dist}
+
 
 %description embedded
 MySQL is a multi-user, multi-threaded SQL database server. This
@@ -201,6 +346,34 @@ Conflicts: mysql55-mysql-embedded-devel
 %endif
 Provides: mysql-embedded-devel = %{version}-%{release}
 
+# Obsoletes all IUS mysql55 versions so only they get updated and not Red Hat's mysql55
+Obsoletes: mysql55-embedded-devel = 5.5.13-1.ius%{?dist}
+Obsoletes: mysql55-embedded-devel = 5.5.14-2.ius%{?dist}
+Obsoletes: mysql55-embedded-devel = 5.5.15-2.ius%{?dist}
+Obsoletes: mysql55-embedded-devel = 5.5.15-3.ius%{?dist}
+Obsoletes: mysql55-embedded-devel = 5.5.16-1.ius%{?dist}
+Obsoletes: mysql55-embedded-devel = 5.5.17-1.ius%{?dist}
+Obsoletes: mysql55-embedded-devel = 5.5.18-1.ius%{?dist}
+Obsoletes: mysql55-embedded-devel = 5.5.19-1.ius%{?dist}
+Obsoletes: mysql55-embedded-devel = 5.5.20-1.ius%{?dist}
+Obsoletes: mysql55-embedded-devel = 5.5.21-1.ius%{?dist}
+Obsoletes: mysql55-embedded-devel = 5.5.22-1.ius%{?dist}
+Obsoletes: mysql55-embedded-devel = 5.5.23-1.ius%{?dist}
+Obsoletes: mysql55-embedded-devel = 5.5.24-1.ius%{?dist}
+Obsoletes: mysql55-embedded-devel = 5.5.25-1.ius%{?dist}
+Obsoletes: mysql55-embedded-devel = 5.5.25-2.a.ius%{?dist}
+Obsoletes: mysql55-embedded-devel = 5.5.25-3.a.ius%{?dist}
+Obsoletes: mysql55-embedded-devel = 5.5.27-2.ius%{?dist}
+Obsoletes: mysql55-embedded-devel = 5.5.28-1.ius%{?dist}
+Obsoletes: mysql55-embedded-devel = 5.5.28-2.ius%{?dist}
+Obsoletes: mysql55-embedded-devel = 5.5.29-1.ius%{?dist}
+Obsoletes: mysql55-embedded-devel = 5.5.30-1.ius%{?dist}
+Obsoletes: mysql55-embedded-devel = 5.5.31-1.ius%{?dist}
+Obsoletes: mysql55-embedded-devel = 5.5.33-1.ius%{?dist}
+Obsoletes: mysql55-embedded-devel = 5.5.33-2.ius%{?dist}
+Obsoletes: mysql55-embedded-devel = 5.5.34-1.ius%{?dist}
+Obsoletes: mysql55-embedded-devel = 5.5.34-2.ius%{?dist}
+
 %description embedded-devel
 MySQL is a multi-user, multi-threaded SQL database server. This
 package contains files needed for developing and testing with
@@ -219,6 +392,34 @@ Conflicts: mysql-bench < %{basever}
 Conflicts: mysql55-mysql-bench
 %endif
 Provides: mysql-bench = %{version}-%{release}
+
+# Obsoletes all IUS mysql55 versions so only they get updated and not Red Hat's mysql55
+Obsoletes: mysql55-bench = 5.5.13-1.ius%{?dist}
+Obsoletes: mysql55-bench = 5.5.14-2.ius%{?dist}
+Obsoletes: mysql55-bench = 5.5.15-2.ius%{?dist}
+Obsoletes: mysql55-bench = 5.5.15-3.ius%{?dist}
+Obsoletes: mysql55-bench = 5.5.16-1.ius%{?dist}
+Obsoletes: mysql55-bench = 5.5.17-1.ius%{?dist}
+Obsoletes: mysql55-bench = 5.5.18-1.ius%{?dist}
+Obsoletes: mysql55-bench = 5.5.19-1.ius%{?dist}
+Obsoletes: mysql55-bench = 5.5.20-1.ius%{?dist}
+Obsoletes: mysql55-bench = 5.5.21-1.ius%{?dist}
+Obsoletes: mysql55-bench = 5.5.22-1.ius%{?dist}
+Obsoletes: mysql55-bench = 5.5.23-1.ius%{?dist}
+Obsoletes: mysql55-bench = 5.5.24-1.ius%{?dist}
+Obsoletes: mysql55-bench = 5.5.25-1.ius%{?dist}
+Obsoletes: mysql55-bench = 5.5.25-2.a.ius%{?dist}
+Obsoletes: mysql55-bench = 5.5.25-3.a.ius%{?dist}
+Obsoletes: mysql55-bench = 5.5.27-2.ius%{?dist}
+Obsoletes: mysql55-bench = 5.5.28-1.ius%{?dist}
+Obsoletes: mysql55-bench = 5.5.28-2.ius%{?dist}
+Obsoletes: mysql55-bench = 5.5.29-1.ius%{?dist}
+Obsoletes: mysql55-bench = 5.5.30-1.ius%{?dist}
+Obsoletes: mysql55-bench = 5.5.31-1.ius%{?dist}
+Obsoletes: mysql55-bench = 5.5.33-1.ius%{?dist}
+Obsoletes: mysql55-bench = 5.5.33-2.ius%{?dist}
+Obsoletes: mysql55-bench = 5.5.34-1.ius%{?dist}
+Obsoletes: mysql55-bench = 5.5.34-2.ius%{?dist}
 
 %description bench
 MySQL is a multi-user, multi-threaded SQL database server. This
@@ -240,6 +441,34 @@ Conflicts: mysql-test < %{basever}
 Conflicts: mysql55-mysql-test
 %endif
 Provides: mysql-test = %{version}-%{release}
+
+# Obsoletes all IUS mysql55 versions so only they get updated and not Red Hat's mysql55
+Obsoletes: mysql55-test = 5.5.13-1.ius%{?dist}
+Obsoletes: mysql55-test = 5.5.14-2.ius%{?dist}
+Obsoletes: mysql55-test = 5.5.15-2.ius%{?dist}
+Obsoletes: mysql55-test = 5.5.15-3.ius%{?dist}
+Obsoletes: mysql55-test = 5.5.16-1.ius%{?dist}
+Obsoletes: mysql55-test = 5.5.17-1.ius%{?dist}
+Obsoletes: mysql55-test = 5.5.18-1.ius%{?dist}
+Obsoletes: mysql55-test = 5.5.19-1.ius%{?dist}
+Obsoletes: mysql55-test = 5.5.20-1.ius%{?dist}
+Obsoletes: mysql55-test = 5.5.21-1.ius%{?dist}
+Obsoletes: mysql55-test = 5.5.22-1.ius%{?dist}
+Obsoletes: mysql55-test = 5.5.23-1.ius%{?dist}
+Obsoletes: mysql55-test = 5.5.24-1.ius%{?dist}
+Obsoletes: mysql55-test = 5.5.25-1.ius%{?dist}
+Obsoletes: mysql55-test = 5.5.25-2.a.ius%{?dist}
+Obsoletes: mysql55-test = 5.5.25-3.a.ius%{?dist}
+Obsoletes: mysql55-test = 5.5.27-2.ius%{?dist}
+Obsoletes: mysql55-test = 5.5.28-1.ius%{?dist}
+Obsoletes: mysql55-test = 5.5.28-2.ius%{?dist}
+Obsoletes: mysql55-test = 5.5.29-1.ius%{?dist}
+Obsoletes: mysql55-test = 5.5.30-1.ius%{?dist}
+Obsoletes: mysql55-test = 5.5.31-1.ius%{?dist}
+Obsoletes: mysql55-test = 5.5.33-1.ius%{?dist}
+Obsoletes: mysql55-test = 5.5.33-2.ius%{?dist}
+Obsoletes: mysql55-test = 5.5.34-1.ius%{?dist}
+Obsoletes: mysql55-test = 5.5.34-2.ius%{?dist}
 
 %description test
 MySQL is a multi-user, multi-threaded SQL database server. This
@@ -264,7 +493,7 @@ cp %{SOURCE101} .
 %patch22 -p1
 
 # ius patches
-#%patch300 -p1 -b .bug58350 
+#%patch300 -p1 -b .bug58350
 %if 0%{?rhel} < 6
 %patch318 -p1
 %endif
@@ -710,6 +939,10 @@ fi
 %{_mandir}/man1/mysql_client_test.1*
 
 %changelog
+* Tue Nov 12 2013 Ben Harper <ben.harper@rackspace.com> - 5.5.34-3.ius
+- changing package name to mysql55u
+- adding Obsoletes for all IUS versions
+
 * Thu Oct 24 2013 Ben Harper <ben.harper@rackspace.com> - 5.5.34-2.ius
 - add conflicts for new mysql55 packages in base for EL 5.10
 
@@ -757,7 +990,7 @@ fi
 * Thu Jun 04 2012 Jeffrey Ness <jeffrey.ness@rackspace.com> 5.5.25-2.a.ius
 - Latest sources from upstream, full changelog found at:
   http://dev.mysql.com/doc/refman/5.5/en/news-5-5-25a.html
-- A regression bug in the optimizer could cause excessive disk usage for 
+- A regression bug in the optimizer could cause excessive disk usage for
   UPDATE statements. (Bug #65745, Bug #14248833)
 - Append 'a' to prep line
 
@@ -806,7 +1039,7 @@ fi
  /usr/share/man/man1/mysql_plugin.1.gz
 
 * Thu Aug 04 2011 Jeffrey Ness <jeffrey.ness@rackspace.com> 5.5.15-3.ius
-- Sub package lib and server now provide config(mysql-*) per Launchpad 
+- Sub package lib and server now provide config(mysql-*) per Launchpad
   https://bugs.launchpad.net/ius/+bug/746115
 
 * Thu Jul 28 2011 Jeffrey Ness <jeffrey.ness@rackspace.com> 5.5.15-2.ius
@@ -849,7 +1082,7 @@ fi
 
 * Tue Feb 01 2011 BJ Dierkes <wdierkes@rackspace.com> 5.5.8-7.ius
 - Adding mysqltmp/mysqllogs directories
-- Added Source100: my-55-terse.cnf (default), and 
+- Added Source100: my-55-terse.cnf (default), and
   Source101: my-55-verbose.cnf which resolves LP#711271
 - Added Source103: mysql.logrotate (for mysqllogs, not mysqld.log)
 - BuildRequires: perl-Time-HiRes on el6
@@ -1425,7 +1658,7 @@ Resolves: #199368
 - rebuilt
 
 * Wed Jul 02 2003 Patrick Macdonald <patrickm@redhat.com> 3.23.57-1
-- revert to prior version of MySQL due to license incompatibilities 
+- revert to prior version of MySQL due to license incompatibilities
   with packages that link against the client.  The MySQL folks are
   looking into the issue.
 
@@ -1436,18 +1669,18 @@ Resolves: #199368
 - rebuilt
 
 * Thu May 29 2003 Patrick Macdonald <patrickm@redhat.com> 4.0.13-2
-- fix filter-requires-mysql.sh with less restrictive for mysql-bench 
+- fix filter-requires-mysql.sh with less restrictive for mysql-bench
 
 * Wed May 28 2003 Patrick Macdonald <patrickm@redhat.com> 4.0.13-1
 - update for MySQL 4.0
 - back-level shared libraries available in mysqlclient10 package
 
 * Fri May 09 2003 Patrick Macdonald <patrickm@redhat.com> 3.23.56-2
-- add sql-bench package (#90110) 
+- add sql-bench package (#90110)
 
 * Wed Mar 19 2003 Patrick Macdonald <patrickm@redhat.com> 3.23.56-1
 - upgrade to 3.23.56 for security fixes
-- remove patch for double-free (included in 3.23.56) 
+- remove patch for double-free (included in 3.23.56)
 
 * Tue Feb 18 2003 Patrick Macdonald <patrickm@redhat.com> 3.23.54a-11
 - enable thread safe client
@@ -1505,11 +1738,11 @@ Resolves: #199368
 - rebuild
 
 * Thu Jul 18 2002 Trond Eivind Glomsrd <teg@redhat.com> 3.23.51-3
-- Fix #63543 and #63542 
+- Fix #63543 and #63542
 
 * Thu Jul 11 2002 Trond Eivind Glomsrd <teg@redhat.com> 3.23.51-2
 - Turn off bdb on PPC(#68591)
-- Turn off the assembly optimizations, for safety. 
+- Turn off the assembly optimizations, for safety.
 
 * Wed Jun 26 2002 Trond Eivind Glomsrd <teg@redhat.com> 3.23.51-1
 - Work around annoying auto* thinking this is a crosscompile
@@ -1551,7 +1784,7 @@ Resolves: #199368
 - 3.23.48
 
 * Thu Jan 17 2002 Trond Eivind Glomsrd <teg@redhat.com> 3.23.47-4
-- Use kill, not mysqladmin, to flush logs and shut down. Thus, 
+- Use kill, not mysqladmin, to flush logs and shut down. Thus,
   an admin password can be set with no problems.
 - Remove reload from init script
 
@@ -1565,7 +1798,7 @@ Resolves: #199368
 
 * Mon Dec  3 2001 Trond Eivind Glomsrd <teg@redhat.com> 3.23.46-1
 - 3.23.46
-- use -fno-rtti and -fno-exceptions, and set CXX to increase stability. 
+- use -fno-rtti and -fno-exceptions, and set CXX to increase stability.
   Recommended by mysql developers.
 
 * Sun Nov 25 2001 Trond Eivind Glomsrd <teg@redhat.com> 3.23.45-1
@@ -1587,7 +1820,7 @@ Resolves: #199368
 * Tue Aug 14 2001 Trond Eivind Glomsrd <teg@redhat.com> 3.23.41-1
 - 3.23.41 bugfix release
 - disable innodb, to avoid the broken updates
-- Use "mysqladmin flush_logs" instead of kill -HUP in logrotate 
+- Use "mysqladmin flush_logs" instead of kill -HUP in logrotate
   script (#51711)
 
 * Sat Jul 21 2001 Trond Eivind Glomsrd <teg@redhat.com>
@@ -1636,7 +1869,7 @@ Resolves: #199368
 - small i18n-fixes to initscript (action needs $)
 
 * Tue Jan 30 2001 Trond Eivind Glomsrd <teg@redhat.com>
-- make it shut down and rotate logs without using mysqladmin 
+- make it shut down and rotate logs without using mysqladmin
   (from #24909)
 
 * Mon Jan 29 2001 Trond Eivind Glomsrd <teg@redhat.com>
@@ -1661,14 +1894,14 @@ Resolves: #199368
 - as above in logrotate script
 - changes to the init sequence - put most of the data
   in /etc/my.cnf instead of hardcoding in the init script
-- use /var/run/mysqld/mysqld.pid instead of 
+- use /var/run/mysqld/mysqld.pid instead of
   /var/run/mysqld/pid
 - use standard safe_mysqld
 - shut down cleaner
 
 * Mon Jan 08 2001 Trond Eivind Glomsrd <teg@redhat.com>
 - 3.23.30
-- do an explicit chmod on /var/lib/mysql in post, to avoid 
+- do an explicit chmod on /var/lib/mysql in post, to avoid
   any problems with broken permissons. There is a report
   of rm not changing this on its own (#22989)
 
@@ -1717,7 +1950,7 @@ Resolves: #199368
   instead of tempnam().
 - revert changes made yesterday, the problem is now
   isolated
- 
+
 * Tue Oct 17 2000 Trond Eivind Glomsrd <teg@redhat.com>
 - use the compat C++ compiler FTTB. Argh.
 - add requirement of ncurses4 (see above)
@@ -1734,8 +1967,8 @@ Resolves: #199368
 - rename config file to /etc/my.cnf, which is what
   mysqld wants... doh. (#17432)
 - include a changed safe_mysqld, so the pid file option
-  works. 
-- make mysql dir world readable to they can access the 
+  works.
+- make mysql dir world readable to they can access the
   mysql socket. (#17432)
 - 3.23.24
 
@@ -1746,7 +1979,7 @@ Resolves: #199368
 - Add "|| :" to condrestart to avoid non-zero exit code
 
 * Thu Aug 24 2000 Trond Eivind Glomsrd <teg@redhat.com>
-- it's mysql.com, not mysql.org and use correct path to 
+- it's mysql.com, not mysql.org and use correct path to
   source (#16830)
 
 * Wed Aug 16 2000 Trond Eivind Glomsrd <teg@redhat.com>
@@ -1783,14 +2016,14 @@ Resolves: #199368
 - more cleanups in initscript
 
 * Thu Jul 13 2000 Trond Eivind Glomsrd <teg@redhat.com>
-- add a patch to work around compiler bug 
-  (from monty@mysql.com) 
+- add a patch to work around compiler bug
+  (from monty@mysql.com)
 
 * Wed Jul 12 2000 Trond Eivind Glomsrd <teg@redhat.com>
 - don't build the SQL daemon statically (glibc problems)
 - fix the logrotate script - only flush log if mysql
   is running
-- change the reloading procedure 
+- change the reloading procedure
 - remove icon - glint is obsolete a long time ago
 
 * Wed Jul 12 2000 Prospector <bugzilla@redhat.com>
