@@ -136,9 +136,6 @@ Requires: /sbin/ldconfig
 
 # IUS-isms
 Conflicts: mysql-libs < %{basever}
-%if 0%{?rhel} < 6
-Conflicts: mysql55-mysql-libs
-%endif
 Provides: mysql-libs = %{version}-%{release}
 Provides: config(mysql-libs) = %{version}-%{release}
 
@@ -196,9 +193,6 @@ Conflicts: MySQL-server
 
 # IUS-isms
 Conflicts: mysql-server < %{basever}
-%if 0%{?rhel} < 6
-Conflicts: mysql55-mysql-server
-%endif
 Provides: mysql-server = %{version}-%{release}
 Provides: config(mysql-server) = %{version}-%{release}
 
@@ -247,9 +241,6 @@ Conflicts: MySQL-devel
 
 # IUS-isms
 Conflicts: mysql-devel < %{basever}
-%if 0%{?rhel} < 6
-Conflicts: mysql55-mysql-devel
-%endif
 Provides: mysql-devel = %{version}-%{release}
 
 # Obsoletes all IUS mysql55 versions so only they get updated and not Red Hat's mysql55
@@ -293,9 +284,6 @@ Group: Applications/Databases
 
 # IUS-isms
 Conflicts: mysql-embedded < %{basever}
-%if 0%{?rhel} < 6
-Conflicts: mysql55-mysql-embedded
-%endif
 Provides: mysql-embedded = %{version}-%{release}
 
 # Obsoletes all IUS mysql55 versions so only they get updated and not Red Hat's mysql55
@@ -341,9 +329,6 @@ Requires: %{name}-devel = %{version}-%{release}
 
 # IUS-isms
 Conflicts: mysql-embedded-devel < %{basever}
-%if 0%{?rhel} < 6
-Conflicts: mysql55-mysql-embedded-devel
-%endif
 Provides: mysql-embedded-devel = %{version}-%{release}
 
 # Obsoletes all IUS mysql55 versions so only they get updated and not Red Hat's mysql55
@@ -388,9 +373,6 @@ Conflicts: MySQL-bench
 
 # IUS-isms
 Conflicts: mysql-bench < %{basever}
-%if 0%{?rhel} < 6
-Conflicts: mysql55-mysql-bench
-%endif
 Provides: mysql-bench = %{version}-%{release}
 
 # Obsoletes all IUS mysql55 versions so only they get updated and not Red Hat's mysql55
@@ -437,9 +419,6 @@ Conflicts: MySQL-test
 
 # IUS-isms
 Conflicts: mysql-test < %{basever}
-%if 0%{?rhel} < 6
-Conflicts: mysql55-mysql-test
-%endif
 Provides: mysql-test = %{version}-%{release}
 
 # Obsoletes all IUS mysql55 versions so only they get updated and not Red Hat's mysql55
@@ -942,6 +921,7 @@ fi
 * Tue Nov 12 2013 Ben Harper <ben.harper@rackspace.com> - 5.5.34-3.ius
 - changing package name to mysql55u
 - adding Obsoletes for all IUS versions
+- remove conflicts for new mysql55 packages in base for EL 5.10
 
 * Thu Oct 24 2013 Ben Harper <ben.harper@rackspace.com> - 5.5.34-2.ius
 - add conflicts for new mysql55 packages in base for EL 5.10
