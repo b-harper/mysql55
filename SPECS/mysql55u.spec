@@ -111,12 +111,12 @@ Obsoletes: mysql55 = 5.5.34-2.ius%{?dist}
 # Added as a convenience, mysql51 doesn't require mysqlclient15
 # but all the packages built against mysql 5.0/5.1 do
 %if 0%{?el5}
-Requires: mysqlclient15
+Requires: mysqlclient15u
 %endif
 
 %if 0%{?el6}
 BuildRequires: perl-Time-HiRes
-Requires: mysqlclient16
+Requires: mysqlclient16u
 %endif
 
 # Working around perl dependency checking bug in rpm FTTB. Remove later.
@@ -922,6 +922,7 @@ fi
 - changing package name to mysql55u
 - adding Obsoletes for all IUS versions
 - remove conflicts for new mysql55 packages in base for EL 5.10
+- update Requires to mysqlclient15u and mysqlclient16u
 
 * Thu Oct 24 2013 Ben Harper <ben.harper@rackspace.com> - 5.5.34-2.ius
 - add conflicts for new mysql55 packages in base for EL 5.10
