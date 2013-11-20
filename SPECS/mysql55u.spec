@@ -1,3 +1,6 @@
+# Disable budiling debuginfo packages via macro from redhat-rpm-config
+# this is needed as that macro can't add Obsoletes for debuginfo packages
+%define debug_package %{nil}
 
 %global basever 5.5
 
@@ -276,6 +279,45 @@ Obsoletes: mysql55-devel = 5.5.34-2.ius%{?dist}
 MySQL is a multi-user, multi-threaded SQL database server. This
 package contains the libraries and header files that are needed for
 developing MySQL client applications.
+
+%package debuginfo
+Summary: Debug information for package %{name}
+Group: Development/Debug
+%if 0%{?rhel} >= 6
+AutoReqProv: 0
+%endif
+
+Obsoletes: mysql55-debuginfo = 5.5.13-1.ius%{?dist}
+Obsoletes: mysql55-debuginfo = 5.5.14-2.ius%{?dist}
+Obsoletes: mysql55-debuginfo = 5.5.15-2.ius%{?dist}
+Obsoletes: mysql55-debuginfo = 5.5.15-3.ius%{?dist}
+Obsoletes: mysql55-debuginfo = 5.5.16-1.ius%{?dist}
+Obsoletes: mysql55-debuginfo = 5.5.17-1.ius%{?dist}
+Obsoletes: mysql55-debuginfo = 5.5.18-1.ius%{?dist}
+Obsoletes: mysql55-debuginfo = 5.5.19-1.ius%{?dist}
+Obsoletes: mysql55-debuginfo = 5.5.20-1.ius%{?dist}
+Obsoletes: mysql55-debuginfo = 5.5.21-1.ius%{?dist}
+Obsoletes: mysql55-debuginfo = 5.5.22-1.ius%{?dist}
+Obsoletes: mysql55-debuginfo = 5.5.23-1.ius%{?dist}
+Obsoletes: mysql55-debuginfo = 5.5.24-1.ius%{?dist}
+Obsoletes: mysql55-debuginfo = 5.5.25-1.ius%{?dist}
+Obsoletes: mysql55-debuginfo = 5.5.25-2.a.ius%{?dist}
+Obsoletes: mysql55-debuginfo = 5.5.25-3.a.ius%{?dist}
+Obsoletes: mysql55-debuginfo = 5.5.27-2.ius%{?dist}
+Obsoletes: mysql55-debuginfo = 5.5.28-1.ius%{?dist}
+Obsoletes: mysql55-debuginfo = 5.5.28-2.ius%{?dist}
+Obsoletes: mysql55-debuginfo = 5.5.29-1.ius%{?dist}
+Obsoletes: mysql55-debuginfo = 5.5.30-1.ius%{?dist}
+Obsoletes: mysql55-debuginfo = 5.5.31-1.ius%{?dist}
+Obsoletes: mysql55-debuginfo = 5.5.33-1.ius%{?dist}
+Obsoletes: mysql55-debuginfo = 5.5.33-2.ius%{?dist}
+Obsoletes: mysql55-debuginfo = 5.5.34-1.ius%{?dist}
+Obsoletes: mysql55-debuginfo = 5.5.34-2.ius%{?dist}
+
+%description debuginfo
+This package provides debug information for package %{name}.
+Debug information is useful when developing applications that use this
+package or when debugging this package.
 
 %package embedded
 
@@ -695,6 +737,12 @@ echo "%{_libdir}/mysql" > %{buildroot}/etc/ld.so.conf.d/%{name}-%{_arch}.conf
 cp %{SOURCE6} README.mysql-docs
 cp %{SOURCE7} README.mysql-license
 
+%if 0%{?rhel} >= 6
+/usr/lib/rpm/find-debuginfo.sh --strict-build-id
+%else
+/usr/lib/rpm/find-debuginfo.sh
+%endif
+
 %clean
 rm -rf %{buildroot}
 
@@ -891,6 +939,9 @@ fi
 /usr/share/aclocal/mysql.m4
 %{_libdir}/mysql/libmysqlclient.so
 %{_libdir}/mysql/libmysqlclient_r.so
+
+%files debuginfo -f debugfiles.list
+%defattr(-,root,root)
 
 %files embedded
 %defattr(-,root,root)
