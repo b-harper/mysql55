@@ -777,6 +777,10 @@ if [ $1 -ge 1 ]; then
     /sbin/service mysqld condrestart >/dev/null 2>&1 || :
 fi
 
+if [ $1 = 0 ] ; then
+    /sbin/service mysqld start >/dev/null 2>&1
+fi
+
 
 %files
 %defattr(-,root,root)
