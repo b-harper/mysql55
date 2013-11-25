@@ -760,6 +760,7 @@ if [ $1 = 1 ]; then
 fi
 /bin/chmod 0755 /var/lib/mysql
 /bin/touch /var/log/mysqld.log
+/sbin/service mysqld start >/dev/null 2>&1
 
 %preun server
 if [ $1 = 0 ]; then
@@ -775,10 +776,6 @@ fi
 %postun server
 if [ $1 -ge 1 ]; then
     /sbin/service mysqld condrestart >/dev/null 2>&1 || :
-fi
-
-if [ $1 = 0 ] ; then
-    /sbin/service mysqld start >/dev/null 2>&1
 fi
 
 
